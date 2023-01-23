@@ -1,11 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Cuba from './Cuba';
 function App() {
   return (
-    <div className="App">
-     hi
-    </div>
+    <Cuba />
   );
 }
 
