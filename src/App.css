@@ -32,7 +32,54 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
+.card {
+  width: 40%;
+  margin-left: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.flex_cl {
+  display: flex;
+}
+
+.f_item_a {
+  width: auto;
+  margin-right: 10px;
+}
+
+.f_item_b {
+  width: 70%;
+}
+
+ .f_item_c { 
+  
+  /* margin-right: 10px; */
+}
+
+@media screen and (min-width: 300px) and (max-width: 480px) {
+  .card {
+    width: 100%;
+    margin: 0;
+  }
+
+  .f_item_a {
+    width: auto;
+  }
+}
+.descstyle{
+  color: blue;
+  padding-left: 5px;
+  border-left-style: solid;
+}
+.tablestyle{
+  border-left-style:  solid;
+  border-left-color: blue;
+}
+
