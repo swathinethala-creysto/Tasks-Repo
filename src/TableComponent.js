@@ -1,84 +1,120 @@
-import React from 'react';
-import MaterialReactTable from 'material-react-table';
-import { List } from '@mui/material';
+// import * as React from 'react';
+// import Box from '@mui/material/Box';
+// import { DataGridPro } from '@mui/x-data-grid-pro';
+
+// const columns = [
+//   {
+//     field: 'firstName',
+//     headerName: 'First name',
+//     width: 350,
+//     editable: false,
+//   },
+//   {
+//     field: 'lastName',
+//     headerName: 'Last name',
+//     width: 350,
+//     editable: false,
+//   },
+//   {
+//     field: 'age',
+//     headerName: 'Age',
+//     width: 300,
+//     editable: false,
+//   }
+  
+// ];
+
+// const rows = [
+//   { id: 1, lastName: 'Ammu', firstName: 'Jon', age: 35 },
+//   { id: 2, lastName: 'King', firstName: 'Jeeva', age: 42 },
+//   { id: 3, lastName: 'Keerthi', firstName: 'Jon', age: 20 },
+//   { id: 4, lastName: 'Akshay', firstName: 'Kumar', age: 25 },
+//   { id: 5, lastName: 'Avinash', firstName: 'Challa', age: 30 },
+// ];
+
+// function TableComponent() {
+//   return (
+//     <Box sx={{ height: 400, width: '100%' }}>
+//       <DataGridPro
+//         rows={rows}
+//         columns={columns}
+//         paging={false}
+//         pageSize={5}
+//         rowsPerPageOptions={[5]}
+//       />
+//     </Box>
+//   );
+// }   
+// export default TableComponent;
+import * as React from 'react';
+import MUIDataTable from "mui-datatables";
+
+const columns = [
+  {
+   name: "name",
+   label: "Name",
+   options: {
+    filter: false,
+    sort: false,
+    draggable:true,
+   }
+  },
+  {
+   name: "company",
+   label: "Company",
+   options: {
+    filter: false,
+    sort: false,
+    draggable :true,
+   }
+  },
+  {
+   name: "city",
+   label: "City",
+   options: {
+    filter: false,
+    sort: false,
+    
+   }
+  },
+  {
+   name: "state",
+   label: "State",
+   options: {
+    filter: false,
+    sort: false,
+    
+   }
+  },
+ ];
+ 
 
 const data = [
-    // {
-    //    STUDENTLIST:  'STUDENTLIST',
-    // },
-    {
-      firstName: 'Maanvi',
-      lastName: 'Krithi',
-      city: 'Kerala',
-    },
-    {
-      firstName: 'Thanvika',
-      lastName: 'Thanu',
-      city: 'Dhelhi',
-    },
-    {
-      firstName: 'Anu',
-      lastName: 'Alphones',
-      city: 'Hyderabad',
-    },
-    {
-        firstName: 'Jeeva',
-        lastName: 'Sekhar',
-        city: 'Rajamundry',
-      },
-      {
-        firstName: 'Sweety',
-        lastName: 'Ammu',
-        city: 'Khammam',
-      },
-      {
-        firstName: 'Chitti',
-        lastName: 'Challa',
-        city: 'Bejawada',
-      },
-  ];
-const columns = [
-    // {
-    //     accessorKey: 'STUDENTSLIST',
-    //     header: 'STUDENTSLIST',
-    // },
-  {
-    accessorKey: 'firstName',
-    header: 'First Name',
-  },
-  {
-    accessorKey: 'lastName',
-    header: 'Last Name',
-  },
-  {
-    accessorKey: 'city',
-    header: 'City',
-  },
-]
+ ["John James", "TataConsultancy", "Hyderabad", "TS"],
+ ["Alphones", "Cognizant", "Banglore", "KT"],
+ ["Bob Merlyn", "TechMahindra", "Chennai", "TN"],
+ ["Jhon Paul", "Capgemini", "Delhi", "TX"],
+];
 
-function TableComponent  ()  {
-  return (
-    // <MaterialReactTable 
-    //     columns={columns} 
-    //     data={data} 
-    //     enableColumnOrdering 
-    //     enableColumnActions={false}
-    //     enableSorting={false}
-    //     enableTopToolbar={false}
-    //     enableBottomToolbar={false}
-    //     />
-    <MaterialReactTable 
-        columns={columns} 
-        data={data} 
-        enableColumnOrdering 
-        enableColumnActions={false}
-        enableSorting={false}
-        enableTopToolbar={false}
-        enableBottomToolbar={false}
-        icons={{DragHandleIcon: () => <div></div> }}
-        />
-  );
+const options = {
+  filter:false,
+  filterType: false,
+  draggableColumns:{enabled:true,transitionTime:500},
+  disableToolbarSelect:false,
+
 };
 
+function TableComponent() {
+
+
+  return (
+    <MUIDataTable
+  data={data}
+  columns={columns}
+  options={options}
+  
+/>
+  );
+}   
 export default TableComponent;
 
